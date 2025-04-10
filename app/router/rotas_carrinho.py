@@ -6,9 +6,9 @@ from app.data.tabelas.Carrinho import Carrinho, CarrinhoCreate
 from sqlalchemy.orm import Session
 
 
-router = APIRouter()
+router = APIRouter(prefix="/carrinho", tags=["Carrinho"])
 
-@router.get("/pegar_carrinho_por_userId")
+@router.get("/consultar_carrinho_por_userId")
 async def pegar_carrinho_por_userId(
     id_usuario: int,
     db: Session = Depends(get_db)
@@ -106,6 +106,7 @@ async def salvar_novo_carrinho(
 
 @router.put("/atualizar_carrinho")
 async def atualizar_carrinho(
+        
     carrinho_update: CarrinhoCreate,  # Dados do carrinho a serem atualizados
     db: Session = Depends(get_db)
 ):

@@ -36,6 +36,8 @@ st.subheader("Pedido:")
 st.markdown("[Criar Pedido](http://127.0.0.1:8000/pedido/criar_pedido)", unsafe_allow_html=True)
 st.markdown("[Deletar Pedido](http://127.0.0.1:8000/pedido/deletar_pedido)", unsafe_allow_html=True)
 
-
-
-
+st.subheader("Carrinho:")
+st.markdown("[Consultar Carrinho Pelo ID do Usuário](http://127.0.0.1:8000/carrinho/consultar_carrinho_por_userId)", unsafe_allow_html=True)
+st.markdown("[Salvar Novo Carrinho](http://127.0.0.1:8000/carrinho/consultar_carrinho_por_userId", unsafe_allow_html=True)
+st.markdown("[Atualizar Carrinho](http://127.0.0.1:8000/carrinho/atualizar_carrinho)", unsafe_allow_html=True)
+st.markdown("[Atualizar Item Carrinho](http://127.0.0.1:8000/carrinho/atualizar_item_carrinho", unsafe_allow_html=True)
