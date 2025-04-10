@@ -5,7 +5,7 @@ import requests
 import time
 
 #API DATA E HORA
-api_url = "https://timeapi.io/api/Time/current/ip?ipAddress=187.255.99.16"
+api_url = "https://timeapi.io/api/Time/current/ip?ipAddress=177.255.90.16"
 
 response = requests.get(api_url)
 
@@ -17,19 +17,25 @@ if response.status_code == 200:
 
     print(f"Data: {data}")
     print(f"Hora: {hora}")
-
 #--------------------------------
 
 
 
 #StreamLit Code
-st.title("Bem vindo a API :)")
+st.title("Bem vindo a API (CRUD):)")
 st.write(f"Agora são: {hora}, Dia:{data}")# Referência da variável.
 
-if st.button("Função Adicionar Usuário"):
-    st.markdown("[Clique aqui para acessar](https://www.google.com)")
+
+st.header("Essas sãos as funções")
+
+st.subheader("Usuário:")
+st.markdown("[Criar Usuário](http://127.0.0.1:8000/usuarios/criar_usuario)", unsafe_allow_html=True)
+st.markdown("[Deletar Usuário](http://127.0.0.1:8000/usuarios/deletar_usuário)", unsafe_allow_html=True)
+
+st.subheader("Pedido:")
+st.markdown("[Criar Pedido](http://127.0.0.1:8000/pedido/criar_pedido)", unsafe_allow_html=True)
+st.markdown("[Deletar Pedido](http://127.0.0.1:8000/pedido/deletar_pedido)", unsafe_allow_html=True)
 
 
 
-st.write("Função de Produtos: \n dd")
 

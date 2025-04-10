@@ -7,13 +7,7 @@ from app.data.tabelas.Pedido import Pedido, PedidoCreate
 
 router = APIRouter(prefix="/pedido", tags=["Pedido"])
 
-@router.get("/")
-async def home_pedido ():
-    print("Função A Adicionar Pedido Type /criar_pedido")
-    print("Função B")
-    print("Função C")
 
-    return {"mensage":"Essas são as funçoes"}
 
 @router.post("/criar_pedido")
 async def criar_pedido (pedido: PedidoCreate, db: Session = Depends(get_db)):
