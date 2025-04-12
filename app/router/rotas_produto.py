@@ -3,7 +3,7 @@ from app.data.tabelas.Produto import Produto, ProdutoCreate
 from fastapi import Depends, HTTPException, APIRouter
 from app.database import get_db
 
-router = APIRouter()
+router = APIRouter(prefix="/produto", tags=["Produto"]) # qui colocamos o prefix + tags 
 
 
 @router.post("/adicionar_novo_produto/", response_model=ProdutoCreate)
@@ -82,7 +82,7 @@ async def deletar_produto(
         raise HTTPException(status_code=500, detail=f"Erro ao deletar produto: {str(e)}")
 
 
-@router.get("/pegar_produto_por_id/{id}", response_model=ProdutoCreate)
+@router.get("/solicitar_produto_id/{id}", response_model=ProdutoCreate)
 async def pegar_produto_por_id(
     id: int,
     db: Session = Depends(get_db)):
@@ -98,7 +98,7 @@ async def pegar_produto_por_id(
         raise HTTPException(status_code=500, detail=f"Erro ao buscar produto: {str(e)}")
 
 
-@router.get("/pegar_produtos/", response_model=list[ProdutoCreate])
+@router.get("/encontra_produto/", response_model=list[ProdutoCreate])
 async def pegar_produtos(db: Session = Depends(get_db)):
     try:
         # Buscar todos os produtos

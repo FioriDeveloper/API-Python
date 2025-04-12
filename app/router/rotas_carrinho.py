@@ -106,7 +106,7 @@ async def salvar_novo_carrinho(
 
 @router.put("/atualizar_carrinho")
 async def atualizar_carrinho(
-        
+
     carrinho_update: CarrinhoCreate,  # Dados do carrinho a serem atualizados
     db: Session = Depends(get_db)
 ):
